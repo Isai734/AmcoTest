@@ -16,7 +16,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingLeft="12sp">
 
             <ImageView
@@ -25,13 +25,13 @@
                 android:layout_height="200sp"
                 android:src="@drawable/avatar_backgrpund" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_toRightOf="@+id/img_movie"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="12sp"
-                android:layout_height="wrap_content"
-                android:padding="12sp">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12sp"
+                android:layout_marginTop="16sp"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/img_movie">
 
                 <TextView
                     android:id="@+id/program_name"
@@ -45,31 +45,29 @@
                     android:id="@+id/network_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/program_name"
                     android:layout_marginBottom="@dimen/text_margin"
                     android:text="Nickelodeon"
                     android:textAppearance="?attr/textAppearanceListItem" />
 
                 <TextView
-                    android:layout_below="@id/network_name"
                     android:id="@+id/ranking_average"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ranking: 2.3"
                     android:textAppearance="?attr/textAppearanceListItem" />
+            </LinearLayout>
 
-
-                <Button
-                    android:id="@+id/visit_site"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:text="Visitar sitio" />
-
-            </RelativeLayout>
+            <Button
+                android:id="@+id/visit_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/img_movie"
+                android:layout_marginRight="18sp"
+                android:layout_marginBottom="18sp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Visitar sitio"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
 
         <TextView
@@ -94,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
             android:text="@string/txv_generos"
-            android:textSize="@dimen/text_size_detail_sub"  />
+            android:textSize="@dimen/text_size_detail_sub" />
 
         <TextView
             android:id="@+id/txv_horarios"
@@ -102,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
             android:text="@string/txv_horarios"
-            android:textSize="@dimen/text_size_detail_sub"  />
+            android:textSize="@dimen/text_size_detail_sub" />
 
         <TextView
             android:layout_width="wrap_content"
