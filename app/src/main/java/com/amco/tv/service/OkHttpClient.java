@@ -16,7 +16,7 @@ public class OkHttpClient {
     private static OkHttpClient INSTANCE = null;
     private okhttp3.OkHttpClient okHttpClien;
 
-    public static OkHttpClient getInstance() {
+    private static OkHttpClient getInstance() {
         if (INSTANCE == null)
             INSTANCE = new OkHttpClient();
         return INSTANCE;
