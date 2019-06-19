@@ -111,7 +111,8 @@ public class CastDetailFragment extends Fragment {
     }
 
     public void setDetail(Program program) {
-        Glide.with(getContext()).load(program.getImage().getMedium()).placeholder(R.drawable.avatar_backgrpund).into(imgMovie);
+        String medio = program.getImage() == null ? "" : program.getImage().getMedium();
+        Glide.with(getContext()).load(medio).placeholder(R.drawable.avatar_backgrpund).into(imgMovie);
         programName.setText(program.getName());
         String net = program.getNetwork() == null ? "" : program.getNetwork().getName();
         netName.setText(net);
