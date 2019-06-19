@@ -43,7 +43,6 @@ public class MainDelegate implements BaseViewPresenter<ResponseError, Constans.O
 
     public void getProgramCast(String programId) {
         presenter.getProgramCast(programId);
-        //onShowProgress();
     }
 
     private void onShowProgress() {

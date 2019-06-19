@@ -17,6 +17,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * @author isaicastro
+ */
+
 public class DetailActivity extends BaseActivity<MainDelegate, List<Cast>> implements ListListener<Cast> {
 
     private CastDetailFragment detailFragment;

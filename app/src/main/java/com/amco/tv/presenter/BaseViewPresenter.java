@@ -1,7 +1,8 @@
 package com.amco.tv.presenter;
 
-import com.amco.tv.tools.Constans;
-
+/**
+ * @author isaicastro
+ */
 public interface BaseViewPresenter<E, O, R> {
 
     void onFailure(E errorResponse);

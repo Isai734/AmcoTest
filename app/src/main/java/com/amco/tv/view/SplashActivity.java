@@ -10,6 +10,10 @@ import com.amco.tv.R;
 import rx.Observable;
 import rx.Subscriber;
 
+/**
+ * @author isaicastro
+ */
+
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = SplashActivity.class.getSimpleName();

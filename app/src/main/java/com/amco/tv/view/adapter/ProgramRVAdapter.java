@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 /**
+ * @author isaicastro
  * {@link RecyclerView.Adapter} that can display a {@link Programs} and makes a call to the
  * specified {@link ListListener}.
  * TODO: Replace the implementation with code for your data type.

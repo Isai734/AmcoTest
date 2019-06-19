@@ -33,6 +33,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author isaicastro
+ */
+
 public class CastDetailFragment extends Fragment {
 
     @BindView(R.id.img_movie)
