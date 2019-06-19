@@ -33,7 +33,7 @@
                 android:layout_marginBottom="12sp"
                 android:layout_marginLeft="12sp"
                 android:text="@string/txv_generos"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_detail_sub" />
 
             <TextView
                 android:id="@+id/txv_horarios"
@@ -41,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/txv_horarios"
                 android:layout_marginLeft="12sp"
-                android:textSize="17sp" />
+                android:layout_marginBottom="12sp"
+                android:textSize="@dimen/text_size_detail_sub"  />
 
         </LinearLayout>
     </ScrollView>
@@ -61,15 +62,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="12sp">
-
-                <LinearLayout
-                    android:id="@+id/content_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20sp"
-                    android:orientation="vertical">
+                android:padding="12sp">
 
                     <TextView
                         android:id="@+id/program_name"
@@ -83,25 +76,28 @@
                         android:id="@+id/network_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/program_name"
                         android:layout_marginBottom="@dimen/text_margin"
                         android:text="Nickelodeon"
                         android:textAppearance="?attr/textAppearanceListItem" />
 
                     <TextView
+                        android:layout_below="@id/network_name"
                         android:id="@+id/ranking_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ranking: 2.3"
                         android:textAppearance="?attr/textAppearanceListItem" />
 
-                </LinearLayout>
 
                 <Button
                     android:id="@+id/visit_site"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/content_2"
-                    android:layout_toRightOf="@+id/content_2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/colorPrimary"
                     android:text="Visitar sitio" />
 
             </RelativeLayout>
@@ -111,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12sp"
                 android:text="Sinópsis:"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_detail_sub"
                 android:textStyle="bold" />
 
             <org.sufficientlysecure.htmltextview.HtmlTextView
@@ -127,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12sp"
                 android:text="Talentos:"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_detail_sub"
                 android:textStyle="bold" />
 
             <FrameLayout
