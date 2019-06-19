@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">App TVMaze</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">Lista de Programas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="conten_sinopsis"><![CDATA[<p><b>Odd Squad</b> is a Canadian/American children\'s live action television series that premiered on TVOKids in Canada and PBS Kids in the United States on November 26, 2014, both on the same day. The series is created by Tim McKeon and Adam Peltzman and is co-produced by The Fred Rogers Company and Sinking Ship Entertainment in association with TVOKids and Ici Radio-Canada Télé. The series features young agents who use indirect reasoning and math to solve and investigate strange happenings in their town. This is commonly in the form of satire, or other comedic archetypes, and are used to teach the audience differing lessons in mathematics. In the UK it airs on CBBC and Pop. In Latin America it airs on Discovery Kids.</p>]]></string>
+
+    <string name="txv_generos"><![CDATA[<b>Generos:</b> %1$s]]></string>
+    <string name="txv_horarios"><![CDATA[<b>Horarios:</b> %1$s]]></string>
+
+</resources>
