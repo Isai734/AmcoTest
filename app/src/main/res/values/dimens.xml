@@ -2,4 +2,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text_size_detail_sub">16dp</dimen>
+    <dimen name="poster_width">120sp</dimen>
+    <dimen name="poster_height">80sp</dimen>
 </resources>

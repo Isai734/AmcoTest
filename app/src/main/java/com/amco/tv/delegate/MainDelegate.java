@@ -1,10 +1,8 @@
 package com.amco.tv.delegate;
 
-
 import android.util.Log;
 
 import com.amco.tv.model.ResponseError;
-import com.amco.tv.model.program.Program;
 import com.amco.tv.model.storage.DataSession;
 import com.amco.tv.presenter.BaseViewPresenter;
 import com.amco.tv.presenter.PresenterImpl;
@@ -12,8 +10,11 @@ import com.amco.tv.tools.Constans;
 import com.amco.tv.view.BaseActivity;
 import com.amco.tv.view.DetailActivity;
 
+import java.util.Locale;
+
 import retrofit2.Response;
 
+import static com.amco.tv.tools.Constans.API_KEY;
 
 /**
  * @author isaicastro
@@ -31,18 +32,11 @@ public class MainDelegate implements BaseViewPresenter<ResponseError, Constans.O
         presenter = new PresenterImpl(this);
     }
 
-    public void getPrograms(String country, String date) {
-        presenter.getProgramsList(country, date);
+    public void getMoviesRate() {
+        String language = Locale.getDefault().getLanguage();
+        Log.i(TAG, "language: " + language);
+        presenter.getMoviesRate(API_KEY, language);
         onShowProgress();
-    }
-
-    public void getProgram(String programId) {
-        presenter.getProgram(programId);
-        onShowProgress();
-    }
-
-    public void getProgramCast(String programId) {
-        presenter.getProgramCast(programId);
     }
 
     private void onShowProgress() {
@@ -60,18 +54,9 @@ public class MainDelegate implements BaseViewPresenter<ResponseError, Constans.O
     public void onSucces(Constans.Operations operations, Response response) {
         activity.dismissProgress();
         switch (operations) {
-            case listPrograms:
-                activity.notifyDataChanged(response.body());
-                break;
-            case getProgram:
-                activity.showScreen(DetailActivity.class, null);
-                dataSession.setProgram((Program) response.body());
-                break;
-
-            case getProgramCast:
+            case getMoviesRate:
                 activity.notifyDataChanged(response.body());
                 break;
         }
-
     }
 }

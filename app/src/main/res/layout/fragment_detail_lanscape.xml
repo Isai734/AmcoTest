@@ -27,22 +27,13 @@
                 android:src="@drawable/avatar_backgrpund" />
 
             <TextView
-                android:id="@+id/txv_generos"
+                android:id="@+id/relase_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12sp"
                 android:layout_marginLeft="12sp"
                 android:text="@string/txv_generos"
                 android:textSize="@dimen/text_size_detail_sub" />
-
-            <TextView
-                android:id="@+id/txv_horarios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/txv_horarios"
-                android:layout_marginLeft="12sp"
-                android:layout_marginBottom="12sp"
-                android:textSize="@dimen/text_size_detail_sub"  />
 
         </LinearLayout>
     </ScrollView>
@@ -73,32 +64,22 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/network_name"
+                        android:id="@+id/original_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/program_name"
                         android:layout_marginBottom="@dimen/text_margin"
+                        android:textStyle="italic"
                         android:text="Nickelodeon"
                         android:textAppearance="?attr/textAppearanceListItem" />
 
                     <TextView
-                        android:layout_below="@id/network_name"
+                        android:layout_below="@id/original_name"
                         android:id="@+id/ranking_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ranking: 2.3"
                         android:textAppearance="?attr/textAppearanceListItem" />
-
-
-                <Button
-                    android:id="@+id/visit_site"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:text="Visitar sitio" />
 
             </RelativeLayout>
 
@@ -117,48 +98,6 @@
                 android:layout_marginLeft="12sp"
                 android:layout_marginRight="12sp"
                 android:text="@string/conten_sinopsis" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="12sp"
-                android:text="Talentos:"
-                android:textSize="@dimen/text_size_detail_sub"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/aviso_without_talentos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="12sp"
-                    android:text="No se han podido cargar los talentos"
-                    android:textSize="30sp"
-                    android:visibility="gone" />
-
-                <ProgressBar
-                    android:id="@+id/progress_bar_talentos"
-                    android:layout_width="60sp"
-                    android:layout_height="60sp"
-                    android:layout_gravity="center" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/list_cast"
-                    android:name="com.amco.tv.ProgramFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:scrollbars="horizontal"
-                    app:layoutManager="LinearLayoutManager"
-                    tools:context=".view.fragment.ProgramFragment"
-                    tools:listitem="@layout/item_cast" />
-
-            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>

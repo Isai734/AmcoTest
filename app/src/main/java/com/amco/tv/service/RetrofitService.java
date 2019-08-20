@@ -1,15 +1,15 @@
 package com.amco.tv.service;
 
 
-import com.amco.tv.model.cast.Cast;
-import com.amco.tv.model.program.Program;
-import com.amco.tv.model.programs.Programs;
+import com.amco.tv.model.MoviesRate;
 import com.amco.tv.tools.ListListener;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -19,14 +19,9 @@ import retrofit2.http.Query;
 
 public interface RetrofitService {
 
-    public static String BASE_URL = "http://api.tvmaze.com/";
+    String BASE_URL = "https://api.themoviedb.org/3/";
 
-    @GET("schedule")
-    Call<List<Programs>> getProgramsList(@Query("country") String country, @Query("date") String date);
-
-    @GET("shows/{programId}")
-    Call<Program> getProgram(@Path("programId") String programId);
-
-    @GET("shows/{programId}/cast")
-    Call<List<Cast>> getProgramCast(@Path("programId") String programId);
+    @GET("movie/top_rated")
+    @Headers("Accept: application/json")
+    Call<MoviesRate> getMoviesRate(@Query("api_key") String api_key, @Query("language") String language);
 }

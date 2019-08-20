@@ -1,15 +1,11 @@
 package com.amco.tv.presenter;
 
+import com.amco.tv.model.MoviesRate;
 import com.amco.tv.model.ResponseError;
-import com.amco.tv.model.cast.Cast;
-import com.amco.tv.model.program.Program;
-import com.amco.tv.model.programs.Programs;
 import com.amco.tv.service.AbstractServer;
 import com.amco.tv.service.RetrofitService;
 import com.amco.tv.service.OkHttpClient;
 import com.amco.tv.tools.Constans;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -34,19 +30,9 @@ public class PresenterImpl extends AbstractServer {
         mTHRetrofitService = mRestAdapter.create(RetrofitService.class);
     }
 
-    public void getProgramsList(String country, String date) {
-        Call<List<Programs>> call = mTHRetrofitService.getProgramsList(country, date);
-        super.attemptRequest(Constans.Operations.listPrograms, call);
-    }
-
-    public void getProgram(String programId) {
-        Call<Program> call = mTHRetrofitService.getProgram(programId);
-        super.attemptRequest(Constans.Operations.getProgram, call);
-    }
-
-    public void getProgramCast(String programId) {
-        Call<List<Cast>> call = mTHRetrofitService.getProgramCast(programId);
-        super.attemptRequest(Constans.Operations.getProgramCast, call);
+    public void getMoviesRate( String api_key, String language) {
+        Call<MoviesRate> call = mTHRetrofitService.getMoviesRate(api_key,language);
+        super.attemptRequest(Constans.Operations.getMoviesRate, call);
     }
 
     @Override

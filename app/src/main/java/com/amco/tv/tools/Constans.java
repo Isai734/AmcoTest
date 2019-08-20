@@ -6,7 +6,7 @@ package com.amco.tv.tools;
 public class Constans {
 
     public enum Operations {
-        listPrograms,
+        getMoviesRate,
         getProgram,
         getProgramCast,
     }
@@ -15,4 +15,7 @@ public class Constans {
         US,
         MX,
     }
+
+    public static String API_KEY = "e845896e7cd83156b55637d269613310";
+    public static String BASE_URL_IMAGES = "https://image.tmdb.org/t/p/w500/";
 }

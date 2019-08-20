@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 
-import com.amco.tv.model.cast.Cast;
 import com.amco.tv.model.storage.DataSession;
 import com.amco.tv.presenter.BaseViewPresenter;
 
@@ -63,8 +62,6 @@ public abstract class BaseActivity<P extends BaseViewPresenter, E> extends AppCo
                 Log.e(TAG, "Exception: " + ex.getMessage());
             }
         }
-        if (this instanceof DetailActivity)
-            ((DetailActivity) this).notifyDataChanged(new LinkedList<Cast>());
     }
 
     @Override

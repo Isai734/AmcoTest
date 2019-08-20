@@ -2,17 +2,13 @@ package com.amco.tv.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.NavUtils;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.amco.tv.R;
 import com.amco.tv.delegate.MainDelegate;
-import com.amco.tv.model.cast.Cast;
-import com.amco.tv.tools.ListListener;
-import com.amco.tv.view.fragment.CastDetailFragment;
-
-import java.util.List;
+import com.amco.tv.model.ResultsItem;
+import com.amco.tv.view.fragment.DetailFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,9 +17,8 @@ import butterknife.ButterKnife;
  * @author isaicastro
  */
 
-public class DetailActivity extends BaseActivity<MainDelegate, List<Cast>> implements ListListener<Cast> {
+public class DetailActivity extends BaseActivity<MainDelegate, ResultsItem> {
 
-    private CastDetailFragment detailFragment;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -34,9 +29,8 @@ public class DetailActivity extends BaseActivity<MainDelegate, List<Cast>> imple
     }
 
     @Override
-    public void notifyDataChanged(List<Cast> data) {
-        detailFragment.setDetail(data);
-        dataSession.setCasts(data);
+    public void notifyDataChanged(ResultsItem data) {
+        //En case de consumir un servicio de detalle.
     }
 
     @Override
@@ -46,20 +40,14 @@ public class DetailActivity extends BaseActivity<MainDelegate, List<Cast>> imple
         ButterKnife.bind(this);//Inicializa butterKnife
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(dataSession.getProgram().getName());
+            getSupportActionBar().setTitle(dataSession.getMovieSelected().getTitle());
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         setContenFragment();
-        mDelegate.getProgramCast(dataSession.getProgram().getId() + "");
-    }
-
-    @Override
-    public void OnItemClickListener(int position, Cast item) {
-        //Listener de cast
     }
 
     public void setContenFragment() {
-        detailFragment = CastDetailFragment.newInstance();
+        DetailFragment detailFragment = DetailFragment.newInstance();
         getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment_detail, detailFragment).commit();
     }
 

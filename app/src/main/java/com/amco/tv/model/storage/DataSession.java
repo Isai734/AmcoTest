@@ -1,8 +1,7 @@
 package com.amco.tv.model.storage;
 
-import com.amco.tv.model.cast.Cast;
-import com.amco.tv.model.program.Program;
-import com.amco.tv.model.programs.Programs;
+import com.amco.tv.model.MoviesRate;
+import com.amco.tv.model.ResultsItem;
 
 import java.util.List;
 
@@ -15,9 +14,8 @@ public class DataSession {
     private final static String TAG = DataSession.class.getSimpleName();
     private static DataSession ourInstance = null;
 
-    private List<Programs> programs;
-    private Program program;
-    private List<Cast> casts;
+    private MoviesRate moviesRate;
+    private ResultsItem movieSelected;
 
     public static DataSession getInstance() {
         if (ourInstance == null)
@@ -25,27 +23,19 @@ public class DataSession {
         return ourInstance;
     }
 
-    public List<Programs> getPrograms() {
-        return programs;
+    public MoviesRate getMoviesRate() {
+        return moviesRate;
     }
 
-    public void setPrograms(List<Programs> programs) {
-        this.programs = programs;
+    public void setMoviesRate(MoviesRate moviesRate) {
+        this.moviesRate = moviesRate;
     }
 
-    public Program getProgram() {
-        return program;
+    public ResultsItem getMovieSelected() {
+        return movieSelected;
     }
 
-    public void setProgram(Program program) {
-        this.program = program;
-    }
-
-    public List<Cast> getCasts() {
-        return casts;
-    }
-
-    public void setCasts(List<Cast> casts) {
-        this.casts = casts;
+    public void setMovieSelected(ResultsItem movieSelected) {
+        this.movieSelected = movieSelected;
     }
 }
